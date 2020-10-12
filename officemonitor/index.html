@@ -19,7 +19,9 @@
           <div id="devices-container" class="block"></div>
         </div>
         <div class="search-form">
-          <select id="devices"></select>
+          <select id="devices">
+            <option value="" disabled selected>Select your option</option>
+          </select>
           <input type="submit" value="Select" class="button" onclick="selectedSensor()">
         </div>
         <input type="submit" value="1 hour before" class="buttonmargin" onclick="hourbefore()">

@@ -13,26 +13,26 @@ function createOption(id) {
 
 
 function createDevicesHtml(data) {
-  const $container = document.getElementById("devices-container");
-  $container.innerHTML = "";
+  const container = document.getElementById("devices-container");
+  container.innerHTML = "";
 
   data.forEach(element => {
     console.log('element', element);
-    const $div = document.createElement("div");
+    const div = document.createElement("div");
 
     if (element.dataType.name == "dt_temperature_C") {
-      $div.innerHTML = element.value + "°C Temperature";
-      $div.setAttribute('class', 'block temperature');
+      div.innerHTML = element.value + "°C Temperature";
+      div.setAttribute('class', 'block temperature');
     } else if (element.dataType.name == "dt_humidity_pct") {
-      $div.innerHTML = element.value + "% Humidity";
-      $div.setAttribute('class', 'block humidity');
+      div.innerHTML = element.value + "% Humidity";
+      div.setAttribute('class', 'block humidity');
     }
     else {
-      $div.innerHTML = element.value + "ppm CO2";
-      $div.setAttribute('class', 'block co2');
+      div.innerHTML = element.value + "ppm CO2";
+      div.setAttribute('class', 'block co2');
     }
 
-    $container.appendChild($div);
+    container.appendChild(div);
   });
 
 }
@@ -55,7 +55,7 @@ async function fetchData(type, params) {
 async function selectedSensor() {
   const x = document.getElementById("devices").selectedIndex;
   const y = document.getElementById("devices").options;
-  const device = y[x].text;
+  const device = y[x].value;
 
   document.getElementById("sensorname").innerHTML = "Sensor: " + device;
   const data = await fetchData('measurements', { device })

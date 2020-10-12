@@ -10,6 +10,9 @@
         font-size: rem-calc(50);
         letter-spacing: -3px;
     }
+    @include breakpoint(small only) {
+        font-size: rem-calc(15);
+    }
 }
 
 .block {
@@ -63,6 +66,9 @@
 
 h1 {
     font-size: 3.5em;
+    @include breakpoint(small only) {
+        font-size: rem-calc(20);
+    }
 }
 
 .search-form {
