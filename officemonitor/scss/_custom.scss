@@ -2,7 +2,7 @@
     display: flex;
     padding: 1.5625rem 0;
     text-align: center;
-    word-spacing: 300px;
+    word-spacing: 600px;
 
     font-size: rem-calc(30);
     @include breakpoint(large) {
@@ -12,6 +12,7 @@
     }
     @include breakpoint(small only) {
         font-size: rem-calc(15);
+        display: inline;
     }
 }
 
@@ -19,6 +20,12 @@
     display: block;
     @include xy-cell(auto);
     border-radius: 4px 4px 0 0;
+
+    @include breakpoint(small only) {
+        font-size: rem-calc(20);
+        //display: inline;
+        margin-bottom: 10px;
+    }
     .temperature {
         border: 1px solid #1779ba;
         background: linear-gradient(#2196e3, #1779ba 70%);
@@ -67,7 +74,7 @@
 h1 {
     font-size: 3.5em;
     @include breakpoint(small only) {
-        font-size: rem-calc(20);
+        font-size: rem-calc(18);
     }
 }
 
@@ -88,4 +95,7 @@ h1 {
 .buttonmargin {
     @include button();
     margin: 0px 10px 0px 10px;
+    @include breakpoint(small only) {
+        margin-bottom: 10px;
+    }
 }
