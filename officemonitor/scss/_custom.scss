@@ -90,6 +90,9 @@ h1 {
     select {
         height: rem-calc(50);
         font-size: rem-calc(26);
+        @include breakpoint(small only) {
+            font-size: rem-calc(14);
+        }
     }
 }
 .buttonmargin {
