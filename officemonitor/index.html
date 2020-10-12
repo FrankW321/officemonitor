@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation for Sites</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+  <div id="main">
+    <div class="container">
+      <h2 class="heading-title">Monitor<span>Office name</span></h2>
+      <h1 class="text-center" id="sensorname"></h1>
+      <div class="main-content">
+        <div class="graph">
+          <div id="devices-container" class="block"></div>
+        </div>
+        <div class="search-form">
+          <select id="devices"></select>
+          <input type="submit" value="Select" class="button" onclick="selectedSensor()">
+        </div>
+        <input type="submit" value="1 hour before" class="buttonmargin" onclick="hourbefore()">
+        <input type="submit" value="1 day before" class="buttonmargin" onclick="daybefore()">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/myscript.js"></script>
+</body>
+
+</html>

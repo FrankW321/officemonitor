@@ -1,0 +1,85 @@
+#devices-container {
+    display: flex;
+    padding: 1.5625rem 0;
+    text-align: center;
+    word-spacing: 300px;
+
+    font-size: rem-calc(30);
+    @include breakpoint(large) {
+        word-wrap: break-all;
+        font-size: rem-calc(50);
+        letter-spacing: -3px;
+    }
+}
+
+.block {
+    display: block;
+    @include xy-cell(auto);
+    border-radius: 4px 4px 0 0;
+    .temperature {
+        border: 1px solid #1779ba;
+        background: linear-gradient(#2196e3, #1779ba 70%);
+    }
+    .humidity {
+        border: 1px solid #767676;
+        background: linear-gradient(#909090, #767676 70%);
+    }
+    .co2 {
+        border: 1px solid #3adb76;
+        background: linear-gradient(#65e394, #3adb76 70%);
+    }
+}
+
+.container {
+    @include xy-grid-container();
+    @include padding(null, 0, null, 0);
+
+    .main-content {
+        @include xy-grid();
+
+        .graph {
+            @include xy-cell(12);
+        }
+    }
+}
+
+.heading-title {
+    color: $secondary-color;
+    text-align: center;
+    @include font-bold(900);
+    @include text-transform(uppercase);
+    font-size: rem-calc(18);
+    margin-bottom: rem-calc(100);
+    margin-top: rem-calc(40);
+    width: 100%;
+
+    span {
+        color: $primary-color;
+        font-size: rem-calc(38);
+        display: table;
+        margin: 0 auto;
+    }
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+.search-form {
+    display: flex;
+    @include xy-cell();
+
+    input {
+        height: rem-calc(50);
+        font-size: rem-calc(16);
+    }
+    option,
+    select {
+        height: rem-calc(50);
+        font-size: rem-calc(26);
+    }
+}
+.buttonmargin {
+    @include button();
+    margin: 0px 10px 0px 10px;
+}
